@@ -1,42 +1,38 @@
 {
-  "name": "redux-thunk-pokedex-long-practice",
+  "name": "pokedex-express-backend",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.11.6",
-    "@testing-library/react": "^11.2.2",
-    "@testing-library/user-event": "^12.3.0",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-redux": "^7.2.2",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "^5.0.1",
-    "redux": "^4.0.5",
-    "redux-thunk": "^2.3.0"
-  },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "per-env",
+    "db:create": "dotenv sequelize-cli db:create",
+    "db:migrate": "dotenv sequelize-cli db:migrate",
+    "db:seed:all": "dotenv sequelize-cli db:seed:all",
+    "start:development": "dotenv nodemon ./bin/www",
+    "start:production": "dotenv ./bin/www"
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "csurf": "^1.11.0",
+    "debug": "~2.6.9",
+    "dotenv": "^8.2.0",
+    "express": "^4.16.4",
+    "express-async-handler": "^1.1.4",
+    "express-bearer-token": "^2.4.0",
+    "express-validator": "^6.4.1",
+    "faker": "^4.1.0",
+    "helmet": "^3.22.0",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1",
+    "per-env": "^1.0.2",
+    "pg": "^8.5.1",
+    "sequelize": "^6.21.4",
+    "uuid": "^8.0.0"
   },
   "devDependencies": {
-    "redux-logger": "^3.0.6"
-  },
-  "proxy": "http://localhost:5000"
+    "dotenv-cli": "^3.1.0",
+    "nodemon": "^2.0.3",
+    "sequelize-cli": "^6.4.1",
+    "sqlite3": "^5.1.6"
+  }
 }
